@@ -20,19 +20,11 @@ Given original data $X \in \mathbb{R}^{N \times D}$ and reconstructed data $\hat
 For each dimension $j \in \{1, \dots, D\}$:
 
 - **Pearson correlation $r_j$:**
-
-  $$
-  r_j = \frac{
-  \sum_{i=1}^{N}(X_{ij}-\bar{X}_j)(\hat{X}_{ij}-\bar{\hat{X}}_j)
-  }{
-  \sqrt{
-  \left(\sum_{i=1}^{N}(X_{ij}-\bar{X}_j)^2\right)
-  \left(\sum_{i=1}^{N}(\hat{X}_{ij}-\bar{\hat{X}}_j)^2\right)
-  }}
-  $$
+  $$r_j = \frac{\sum_{i=1}^{N}(X_{ij}-\bar{X}_j)(\hat{X}_{ij}-\bar{\hat{X}}_j)}{\sqrt{\left(\sum_{i=1}^{N}(X_{ij}-\bar{X}_j)^2\right)\left(\sum_{i=1}^{N}(\hat{X}_{ij}-\bar{\hat{X}}_j)^2\right)}}$$
 
 - **Spearman rank correlation $r_{s, j}$**:
-$$r_{s, j} = 1 - \frac{6 \sum_{i=1}^N d_i^2}{N(N^2 - 1)}$$
+  $$r_{s, j} = 1 - \frac{6 \sum_{i=1}^N d_i^2}{N(N^2 - 1)}$$
+  
 where $d_i = \mathrm{rank}(X_{ij}) - \mathrm{rank}(\hat{X}_{ij})$, with average ranks assigned to ties.
 
 ### 2. Mutual $k\text{NN}$ Topology Preservation (Jaccard Index)
